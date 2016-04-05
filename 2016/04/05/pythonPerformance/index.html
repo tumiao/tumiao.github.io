@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Python,性能," />
 
 
 
@@ -57,15 +57,49 @@
 
 
 
-<meta name="description" content="自省，自立。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="土喵的博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="h2 {
+text-align: center;
+}
+ul, p{
+    font-size: 16px;
+    line-height: 1.8em;
+}
+
+
+Python性能相关的几点
+python中合并字符串，join()方法优于“+”操作
+因为“+”操作需要先创建一个新的字符串，然后将旧的字串内容拷贝过去。而用Python的数组模块来修改单独的字符，而后采用join()方法来生成最终">
+<meta property="og:type" content="article">
+<meta property="og:title" content="pythonPerformance">
+<meta property="og:url" content="http://yoursite.com/2016/04/05/pythonPerformance/index.html">
 <meta property="og:site_name" content="土喵的博客">
-<meta property="og:description" content="自省，自立。">
+<meta property="og:description" content="h2 {
+text-align: center;
+}
+ul, p{
+    font-size: 16px;
+    line-height: 1.8em;
+}
+
+
+Python性能相关的几点
+python中合并字符串，join()方法优于“+”操作
+因为“+”操作需要先创建一个新的字符串，然后将旧的字串内容拷贝过去。而用Python的数组模块来修改单独的字符，而后采用join()方法来生成最终">
+<meta property="og:updated_time" content="2016-04-05T11:59:54.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="土喵的博客">
-<meta name="twitter:description" content="自省，自立。">
+<meta name="twitter:title" content="pythonPerformance">
+<meta name="twitter:description" content="h2 {
+text-align: center;
+}
+ul, p{
+    font-size: 16px;
+    line-height: 1.8em;
+}
+
+
+Python性能相关的几点
+python中合并字符串，join()方法优于“+”操作
+因为“+”操作需要先创建一个新的字符串，然后将旧的字串内容拷贝过去。而用Python的数组模块来修改单独的字符，而后采用join()方法来生成最终">
 
 
 
@@ -83,7 +117,7 @@
   };
 </script>
 
-  <title> 土喵的博客 </title>
+  <title> pythonPerformance | 土喵的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -104,9 +138,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -203,9 +235,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -225,10 +257,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/04/05/pythonPerformance/" itemprop="url">
-                  pythonPerformance
-                </a>
+                pythonPerformance
               
             
           </h1>
@@ -293,9 +322,7 @@
       
 
       
-        
-          
-            <style>
+        <style>
 h2 {
 text-align: center;
 }
@@ -336,158 +363,53 @@ ul, p{
 </ul>
 <p>最近在看Python相关的东西，还有许多有趣的东西可以加到这一页，留到以后再说吧。这篇文章是从<a href="http://pycoders-weekly-chinese.readthedocs.org/en/latest/issue1/python-performance-tips-part-1.html" target="_blank" rel="external">这里</a>摘录了一些构成的。</p>
 
-          
-        
       
     </div>
 
     <div>
       
+        
+      
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/04/05/test/" itemprop="url">
-                  第一篇
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-05T12:43:24+08:00" content="2016-04-05">
-              2016-04-05
-            </time>
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/随笔/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
+            <a href="/tags/Python/" rel="tag">#Python</a>
           
-
+            <a href="/tags/性能/" rel="tag">#性能</a>
           
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/04/05/test/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/05/test/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <style type="text/css">
-h3{
-    text-align: center;
-}
-p.content {
-    text-indent: 2em;
-}
-</style>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/05/test/" rel="next" title="第一篇">
+                <i class="fa fa-chevron-left"></i> 第一篇
+              </a>
+            
+          </div>
 
-<p></p><h2>清明忆旧事</h2><p></p>
-<p class="content">恰逢清明小假，周末同土喵逛了琉璃厂。在书店逛了逛，走到文学理论区域的书架，上面陈列着一套套名称熟悉的书：《魏晋南北朝文学史参考资料》、《饮水詞箋校》、《玉台新咏笺注》、《宋诗别裁集》… </p><br><p class="content">这些全部都是当初上文学史课的时候，用到的资料。爱买书的习惯当时属于不治状态，买了一套又一套。有次去逛书店，强忍了许久才没有买下成套的《史记》或者《汉书》。买的多，读的少，但又舍不得丢掉或者送人，以至本科毕业，往家里邮了一箱又一箱的书。</p><br><p class="content">虽然如此，读书最多的也是那时候了，古诗词、明清小说乃至民国、现当代文学的书籍，看了许多。现当代的文学理论，我并不很着迷，唯独对古代文学理论，情有独钟。然而，终于还是去学了计算机。灯下夜读的往事，想来不能不喟然一叹。</p><br><p class="content">《魏晋南北朝文学史参考资料》有上下两册，我应该是翻过的。鲍照的《拟行路难》也许是老师讲解过的缘故，印象深刻得很：<br><br><center>泻水置平地，各自东西南北流。<br><br>人生亦有命，安能行叹复坐愁？<br><br>酌酒以自宽，举杯断绝歌路难。<br><br>心非木石岂无感！吞声踯躅不敢言。</center>当时喜欢这首诗，因为爱它意气慷慨，如今，才更多感受它悲怆滋味。</p>
-
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -495,6 +417,14 @@ p.content {
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/04/05/pythonPerformance/"
+           data-title="pythonPerformance" data-url="http://yoursite.com/2016/04/05/pythonPerformance/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -514,8 +444,17 @@ p.content {
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -582,6 +521,17 @@ p.content {
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Python性能相关的几点"><span class="nav-number">1.</span> <span class="nav-text">Python性能相关的几点</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -666,6 +616,11 @@ p.content {
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+<script type="text/javascript" src="/vendors/jquery-scrollintoview/jquery.scrollintoview.min.js?v=0.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=0.5.0"></script>
+
+
 
   
 

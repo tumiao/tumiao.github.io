@@ -60,7 +60,7 @@
 <meta name="description" content="自省，自立。">
 <meta property="og:type" content="website">
 <meta property="og:title" content="土喵的博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/tags/Python/index.html">
 <meta property="og:site_name" content="土喵的博客">
 <meta property="og:description" content="自省，自立。">
 <meta name="twitter:card" content="summary">
@@ -83,7 +83,7 @@
   };
 </script>
 
-  <title> 土喵的博客 </title>
+  <title> 标签: Python | 土喵的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -104,9 +104,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -203,289 +201,45 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
-    
-      
 
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/04/05/pythonPerformance/" itemprop="url">
-                  pythonPerformance
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-05T19:45:42+08:00" content="2016-04-05">
-              2016-04-05
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/技术/" itemprop="url" rel="index">
-                    <span itemprop="name">技术</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/04/05/pythonPerformance/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/05/pythonPerformance/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <style>
-h2 {
-text-align: center;
-}
-ul, p{
-    font-size: 16px;
-    line-height: 1.8em;
-}
-</style>
-
-<h2 id="Python性能相关的几点"><a href="#Python性能相关的几点" class="headerlink" title="Python性能相关的几点"></a>Python性能相关的几点</h2><ul>
-<li>python中合并字符串，join()方法优于“+”操作<ul>
-<li>因为“+”操作需要先创建一个新的字符串，然后将旧的字串内容拷贝过去。而用Python的数组模块来修改单独的字符，而后采用join()方法来生成最终的字串，效率更高.</li>
-</ul>
-</li>
-<li>多重复值来交换变量值的方法更为Pythonic，速度也更快：<br>  x, y = y, x</li>
-<li>只在必要时引入模块。如将import置于函数体内部<ul>
-<li>需要注意的是，该方法不能提高程序的整体速度。</li>
-</ul>
-</li>
-<li>死循环也讲求性能<ul>
-<li>while 1的性能优于while True，因为它是一个单跳转操作，可以提升程序速度。</li>
-</ul>
-</li>
-<li>使用列表推导式(list comprehension)<ul>
-<li>列表推导式更快，因为针对Python解释器做出了优化，同时，可读性更强。</li>
-<li>格式如：[i * i for i in xrange(10)]</li>
-</ul>
-</li>
-<li>较长序列的存储or处理<ul>
-<li>数字相关的序列: xrange()总是优于range()，因为前者一次载入一个元素，而后者则是一次性载入所有元素，所以前者能省下许多内存。</li>
-<li>其他: 使用Python生成器比list要好，同样地，它不是一次性加载，因而可以节省内存，提高性能。</li>
-</ul>
-</li>
-<li>采用字典或者集合来检查成员存在与否<ul>
-<li>Python中字典和集合的实现为哈希表，查找操作的复杂度为O(1)，因此，查找操作频繁时，字典和集合是不错的数据结构。</li>
-</ul>
-</li>
-</ul>
-<p>最近在看Python相关的东西，还有许多有趣的东西可以加到这一页，留到以后再说吧。这篇文章是从<a href="http://pycoders-weekly-chinese.readthedocs.org/en/latest/issue1/python-performance-tips-part-1.html" target="_blank" rel="external">这里</a>摘录了一些构成的。</p>
-
-          
-        
-      
+  <div id="posts" class="posts-collapse">
+    <div class="collection-title">
+      <h2 >
+        Python
+        <small>标签</small>
+      </h2>
     </div>
 
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
+    
       
 
-      
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
 
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
+      <h1 class="post-title">
+        
+            <a class="post-title-link" href="/2016/04/05/pythonPerformance/" itemprop="url">
+              
+                <span itemprop="name">pythonPerformance</span>
+              
+            </a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2016-04-05T19:45:42+08:00"
+              content="2016-04-05" >
+          04-05
+        </time>
+      </div>
+
+    </header>
   </article>
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/04/05/test/" itemprop="url">
-                  第一篇
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-05T12:43:24+08:00" content="2016-04-05">
-              2016-04-05
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/随笔/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/04/05/test/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/05/test/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <style type="text/css">
-h3{
-    text-align: center;
-}
-p.content {
-    text-indent: 2em;
-}
-</style>
-
-<p></p><h2>清明忆旧事</h2><p></p>
-<p class="content">恰逢清明小假，周末同土喵逛了琉璃厂。在书店逛了逛，走到文学理论区域的书架，上面陈列着一套套名称熟悉的书：《魏晋南北朝文学史参考资料》、《饮水詞箋校》、《玉台新咏笺注》、《宋诗别裁集》… </p><br><p class="content">这些全部都是当初上文学史课的时候，用到的资料。爱买书的习惯当时属于不治状态，买了一套又一套。有次去逛书店，强忍了许久才没有买下成套的《史记》或者《汉书》。买的多，读的少，但又舍不得丢掉或者送人，以至本科毕业，往家里邮了一箱又一箱的书。</p><br><p class="content">虽然如此，读书最多的也是那时候了，古诗词、明清小说乃至民国、现当代文学的书籍，看了许多。现当代的文学理论，我并不很着迷，唯独对古代文学理论，情有独钟。然而，终于还是去学了计算机。灯下夜读的往事，想来不能不喟然一叹。</p><br><p class="content">《魏晋南北朝文学史参考资料》有上下两册，我应该是翻过的。鲍照的《拟行路难》也许是老师讲解过的缘故，印象深刻得很：<br><br><center>泻水置平地，各自东西南北流。<br><br>人生亦有命，安能行叹复坐愁？<br><br>酌酒以自宽，举杯断绝歌路难。<br><br>心非木石岂无感！吞声踯躅不敢言。</center>当时喜欢这首诗，因为爱它意气慷慨，如今，才更多感受它悲怆滋味。</p>
-
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-  </section>
+  </div>
 
   
 
