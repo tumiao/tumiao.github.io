@@ -226,6 +226,215 @@
             
               
                 
+                <a class="post-title-link" href="/2016/04/11/GoNote1/" itemprop="url">
+                  GO之旅1
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-11T20:45:28+08:00" content="2016-04-11">
+              2016-04-11
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/11/GoNote1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/11/GoNote1/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <style>
+p {
+    text-indent: 2em;
+}
+</style>
+
+<h3 id="GO变量声明"><a href="#GO变量声明" class="headerlink" title="GO变量声明"></a>GO变量声明</h3><p>GO中可以用var语句声明一系列变量，变量的类型在最后写明，如:</p>
+<pre><code>var (
+    num, money int
+    name, id_num string
+)
+</code></pre><p>var语句可以是package级别的(全局变量)，也可以是function级别(函数内部声明)的。<br>如果要在var声明中包括初始值，那么必须给出每个变量的初始值。</p>
+<pre><code>var i, j int = 1, 2
+//初始值跟变量一一对应，如果两侧数量不等，会抛出错误
+</code></pre><p>在为变量指定初始值的情况下，变量的类型可以省略不写，这使得Go语言看起来有点像是动态类型语言，实际上，Go是不折不扣的强类型语言。</p>
+<pre><code>var i, j = 1, 2
+</code></pre><p>变量初始化可以简写如下：</p>
+<pre><code>i := 1
+j :=2
+</code></pre><p>不过 := 左侧出现的变量不能是声明过的，否则会抛出编译错误。</p>
+<p>Go支持多重赋值，因此，在交换两个变量值的时候，可以采取以下语句：</p>
+<pre><code>i, j = j, i
+</code></pre><p>对于任一类型的变量，如果不指定初始值，则采用自身的默认值(默认的zero value)，数量型的变量默认为0，布尔值为false，string类型是””</p>
+<p>与C不同，Go之中，不同类型的变量之间的赋值，需要进行显式的类型转换：</p>
+<pre><code>i := 42
+j := float64(i)
+</code></pre><h3 id="Go常量"><a href="#Go常量" class="headerlink" title="Go常量"></a>Go常量</h3><p>Go中常量声明与变量类似，不过，关键词变为const，而非var。</p>
+<p>Go中的字面常量(字面量，包括数字和字串等)是无类型的。只要常量在相应类型的值域范围内，即可作为该类型的常量，如常量-12，可以赋值给int, uint, int32, int64, float32, float64, complex64, complex128等类型的变量。</p>
+<p>Go的常量定义可以限定常量类型，但不是必须的。如果定义常量时没有指定类型，那么它与字面常量一样，是无类型常量。只是，由于常量的赋值是一个编译期行为，所以右值不能出现任何需要运行期才能得出结果的表达式，比如下面的语句就会得出编译错误：</p>
+<pre><code>const Home = os.GetEnv(&quot;HOME&quot;)
+</code></pre><p>Go语言预定义了一下常量：true、false和itoa。itoa比较特殊，可以认为是一个可以被编译器修改的常量，在每一个const关键字出现时被重置为0， 然后在下一个const关键字出现之前，每出现一次itoa，其所代表的数字就会自动加1。</p>
+<pre><code>const (//itoa重置为0
+    c0 = itoa // c0 = 1
+    c1 = itoa // c1 = 1
+    c2 = itoa // c2 = 1
+)
+const (// itoa重置为0
+    a = 1 &lt;&lt; itoa // a = 1
+    b = 1 &lt;&lt; itoa // b = 2
+    c = 1 &lt;&lt; itoa // c = 4
+)
+</code></pre><p>如果两个const表达式的赋值语句是一样的，那么可以省略后一个的赋值表达式。因此，上面的常量赋值可以简化为：</p>
+<pre><code>const (
+    c0 = itoa
+    c1
+    c2
+)
+const (
+    a = 1 &lt;&lt; itoa
+    b
+    c
+)
+</code></pre><h3 id="Go数据类型"><a href="#Go数据类型" class="headerlink" title="Go数据类型"></a>Go数据类型</h3><p>GO中的布尔类型不接受其他类型的赋值，但也不支持自动或者强制的类型转换。</p>
+<p>整数类型中的int和unit的长度是平台相关的，因此int与int32等是不同的类型，转换需要显式进行。<strong>在做强制类型转换时，需要注意长度被截断发生的精度损失(浮点数强制转换为整数)和值溢出(值超过转换的目标类型的值范围)问题。</strong></p>
+<p>不同类型的整型数之间不能相互比较，但各种类型的整型数都可以同字面常量进行直接比较。</p>
+<p>浮点数有两种：float32和float64，其中float32相当于C中的float类型，float64则相当于double类型。</p>
+<p>字符串在初始化之后，其中的内容不能被修改，这一点与数组不同。</p>
+<p>Go语言遍历字符串的方式有两种。一种以字节数组的方式遍历：</p>
+<pre><code>str := &quot;Hello, 世界&quot;
+n := len(str)
+for i := 0; i&lt; n; i ++ {
+    ch := str[i] // ch的类型是byte
+    fmt.Println(i, ch)
+}
+</code></pre><p>一种以Unicode字符遍历：</p>
+<pre><code>str := &quot;Hello, 世界&quot;
+for i, ch range str {
+    fmt.Println(i, ch)
+}
+</code></pre><p>当字串中不含有中文字符时，两种遍历结果一致；如含有中文字符，则结果不一致，因为，中文字符在UTF-8中占3个字节。Unicode字符方式遍历时，字符的类型是rune(代表单个Unicode字符)，而非byte。</p>
+<p>Go语言中，数组长度在定以后就不可更改。数组声明时必须指定长度，长度可以是一个常量或者一个常量表达式(常量表达式是编译期即可计算结果的表达式)。数组在Go语言中是一个值类型(value type)。所有的值类型变量在赋值和作为参数传递时，都将产生一次复制动作，因此，函数体中无法修改传入的数组的内容。</p>
+<h3 id="Go数组切片"><a href="#Go数组切片" class="headerlink" title="Go数组切片"></a>Go数组切片</h3><p>Go中的数组切片看起来就像一个指向数组的指针，实际上，它有自己的数据结构，而不仅仅是个指针。其数据结构可以抽象为以下3个变量：</p>
+<ul>
+<li>一个指向原生数组的指针；</li>
+<li>数组切片中的元素个数；</li>
+<li>数组切片已分配的存储空间</li>
+</ul>
+<p>从底层实现的角度来看，数组切片实际上仍使用数组来管理元素。基于数组，数组切片添加了一系列的管理功能，可以随时动态扩充存放空间，并且可以被随意传递而不会导致所管理的元素被重复复制。</p>
+<p>创建数组切片的方法主要有两种。一是基于数组创建，数组切片可以只使用数组的部分或全部元素，甚至创建一个比所基于的数组更大的数组切片。如：</p>
+<pre><code>var myArray [7]int = [7]int{1,2,3,4,5,6,7}
+var mySlice []int = myArray[:5]
+var newArray []int = myArray[:]
+</code></pre><p>另一种方法是直接创建。利用Go的内置函数make()可以灵活地创建数组切片。</p>
+<pre><code>mySlice1 := make([]int, 5)
+mySlice2 := make([], 5, 10)//元素个数为5个，并预留10个元素的存储空间。
+mySlice3 := []int{1,2,3,4,5}//直接创建并初始化包含5个元素的数组切片，实际上，还创建了一个匿名数组。
+</code></pre><p>数组切片比数组更强大的地方在于可动态增减元素。内置函数cap()返回的是数组切片分配的空间大小，而len()返回的是数组切片中当前存储的元素的个数。数组切片新增元素的函数为append：</p>
+<pre><code>mySlice = append(mySlice, 1, 2, 3)//向mySlice中新增1，2，3三个元素。
+mySLice = append(mySlice, mySlice1...)//向mySlice中追加另一个数组切片mySlice1
+//需要注意的是mySlice1之后的省略号不可缺少
+</code></pre><p>数组切片支持复制操作，特别是Go的内置函数copy()，可用于将一个数组切片的内容拷贝到另一个数组切片中。如果两个数组切片不一样大，则按照其中较小的数组切片的元素个数进行复制。如：</p>
+<pre><code>slice1 := []int{1, 2, 3, 4, 5}
+slice2 := []int{5, 4, 3}
+copy(slice2, slice1)// 只会复制slice1的前三个元素到slice2中。
+copy(slice1, slice2)//只会复制slice2的3个元素到slice1的前3个位置。
+</code></pre>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/04/05/pythonPerformance/" itemprop="url">
                   Python性能相关
                 </a>
@@ -526,7 +735,7 @@ p.content {
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -543,7 +752,7 @@ p.content {
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
