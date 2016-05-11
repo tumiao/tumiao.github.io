@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="电影,垫底辣妹," />
+  <meta name="keywords" content="LeetCode,Patching Array,贪心法," />
 
 
 
@@ -57,34 +57,22 @@
 
 
 
-<meta name="description" content="p {
-    text-indent: 2em;
-}
-
-
-《垫底辣妹》是跟土喵两个人在家里看的。一边看，土喵一边嚷嚷“一碗鸡汤”。
-诚然，凡是励志片，总是有鸡汤的嫌疑的。《垫底辣妹》之所以如此受欢迎，在我看来，乃是因为，它不仅仅是一个励志片。从一个无知少女到私立名校的进修生，这个故事已然够吸引人，更无须说还有因材施教、落后生的心理需求、子女教育问题等热点话题穿插其中。相较日本的青春片，中国的校">
+<meta name="description" content="p {    text-indent:2em;}题目链接：https://leetcode.com/problems/patching-array/
+采用方法为贪心法，原理如下，给定当前覆盖范围为i(即1, …, i), 接下来要加入一个数字，扩大当前的覆盖范围同时保持连续性时，添加的数字x的范围应该是[1, i + 1]。添加数字后的覆盖范围为i + x(即1, …, i + x).
+其中x的值">
 <meta property="og:type" content="article">
-<meta property="og:title" content="电影——垫底辣妹">
-<meta property="og:url" content="http://yoursite.com/2016/04/17/MovieNote1/index.html">
+<meta property="og:title" content="LeetCode1 -- Patching Array">
+<meta property="og:url" content="http://yoursite.com/2016/05/11/LeetCode1/index.html">
 <meta property="og:site_name" content="土喵的博客">
-<meta property="og:description" content="p {
-    text-indent: 2em;
-}
-
-
-《垫底辣妹》是跟土喵两个人在家里看的。一边看，土喵一边嚷嚷“一碗鸡汤”。
-诚然，凡是励志片，总是有鸡汤的嫌疑的。《垫底辣妹》之所以如此受欢迎，在我看来，乃是因为，它不仅仅是一个励志片。从一个无知少女到私立名校的进修生，这个故事已然够吸引人，更无须说还有因材施教、落后生的心理需求、子女教育问题等热点话题穿插其中。相较日本的青春片，中国的校">
-<meta property="og:updated_time" content="2016-04-17T09:06:22.000Z">
+<meta property="og:description" content="p {    text-indent:2em;}题目链接：https://leetcode.com/problems/patching-array/
+采用方法为贪心法，原理如下，给定当前覆盖范围为i(即1, …, i), 接下来要加入一个数字，扩大当前的覆盖范围同时保持连续性时，添加的数字x的范围应该是[1, i + 1]。添加数字后的覆盖范围为i + x(即1, …, i + x).
+其中x的值">
+<meta property="og:updated_time" content="2016-05-11T11:51:19.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="电影——垫底辣妹">
-<meta name="twitter:description" content="p {
-    text-indent: 2em;
-}
-
-
-《垫底辣妹》是跟土喵两个人在家里看的。一边看，土喵一边嚷嚷“一碗鸡汤”。
-诚然，凡是励志片，总是有鸡汤的嫌疑的。《垫底辣妹》之所以如此受欢迎，在我看来，乃是因为，它不仅仅是一个励志片。从一个无知少女到私立名校的进修生，这个故事已然够吸引人，更无须说还有因材施教、落后生的心理需求、子女教育问题等热点话题穿插其中。相较日本的青春片，中国的校">
+<meta name="twitter:title" content="LeetCode1 -- Patching Array">
+<meta name="twitter:description" content="p {    text-indent:2em;}题目链接：https://leetcode.com/problems/patching-array/
+采用方法为贪心法，原理如下，给定当前覆盖范围为i(即1, …, i), 接下来要加入一个数字，扩大当前的覆盖范围同时保持连续性时，添加的数字x的范围应该是[1, i + 1]。添加数字后的覆盖范围为i + x(即1, …, i + x).
+其中x的值">
 
 
 
@@ -102,7 +90,7 @@
   };
 </script>
 
-  <title> 电影——垫底辣妹 | 土喵的博客 </title>
+  <title> LeetCode1 -- Patching Array | 土喵的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -242,7 +230,7 @@
             
             
               
-                电影——垫底辣妹
+                LeetCode1 -- Patching Array
               
             
           </h1>
@@ -254,8 +242,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-17T16:46:35+08:00" content="2016-04-17">
-              2016-04-17
+            <time itemprop="dateCreated" datetime="2016-05-11T13:19:32+08:00" content="2016-05-11">
+              2016-05-11
             </time>
           </span>
 
@@ -268,8 +256,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/随笔/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
                   </a>
                 </span>
 
@@ -284,8 +272,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/17/MovieNote1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/17/MovieNote1/" itemprop="commentsCount"></span>
+                <a href="/2016/05/11/LeetCode1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/11/LeetCode1/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -307,17 +295,12 @@
       
 
       
-        <style>
-p {
-    text-indent: 2em;
-}
-</style>
+        <p><style><br>p {<br>    text-indent:2em;<br>}<br></style><br>题目链接：<a href="https://leetcode.com/problems/patching-array/" target="_blank" rel="external">https://leetcode.com/problems/patching-array/</a></p>
+<p>采用方法为贪心法，原理如下，给定当前覆盖范围为i(即1, …, i), 接下来要加入一个数字，扩大当前的覆盖范围同时保持连续性时，添加的数字x的范围应该是[1, i + 1]。添加数字后的覆盖范围为i + x(即1, …, i + x).</p>
+<p>其中x的值最大为i + 1（再大的话，就不连续了，比如缺少i + 1），因此， 扩大的范围最大为(1, 2, …, i * i + 1).如果nums指定位置的数字在[1, i+1]范围内，则无需添加数字，最远范围为i + x; 否则，需要添加新的数字，添加的数字越大越好，为i+1。如此访问nums中的数字，直到i的值大于等于n。</p>
+<font style="color:darkRed;">【注意】largest_num的值必须是unsigned int或者long long，因为largest_num可能超出范围。</font>
 
-<p>《垫底辣妹》是跟土喵两个人在家里看的。一边看，土喵一边嚷嚷“一碗鸡汤”。</p>
-<p>诚然，凡是励志片，总是有鸡汤的嫌疑的。《垫底辣妹》之所以如此受欢迎，在我看来，乃是因为，它不仅仅是一个励志片。从一个无知少女到私立名校的进修生，这个故事已然够吸引人，更无须说还有因材施教、落后生的心理需求、子女教育问题等热点话题穿插其中。相较日本的青春片，中国的校园影片，可学的实在太多，几时能逃出初恋、叛逆的窠臼呢？</p>
-<p>电影中，女主将下定决心之后的努力，遇到挫折之后的退缩与重振旗鼓的倔强演绎得极好，加上美丽的妆容，可爱的性格，出彩极了。几个贴心而又率真的好朋友，能一起玩耍，更能一起奋进，同样表现得很好。而我最喜欢的，是明妈妈。</p>
-<p>她几乎是每个孩子梦中的妈妈吧。总是温柔地笑着，陪伴着女儿，不让她感到孤独或者难堪。无论发生什么事，总是尊重女儿的感受，而不是像爸爸那样，首先考虑到的是作为一个家长的尊严，甚至于因为能因此与女儿拉近关系而感到开心。也许有溺爱女儿的嫌疑，然而把女儿的快乐放在第一位，总能够看到女儿的优点，即便女儿逃学、吸烟也依然相信女儿并为之筹谋更好的未来的母亲，除了她，有谁能够做到呢？</p>
-<p>要知道，父母的权威或许容易得到，孩子的信任与父母的尊重，却是难得的。沙耶加跟母亲之间的信任与爱，乃是我最最羡慕的。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">int</span> <span class="title">minPatches</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> largest_num = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> patch_num = <span class="number">0</span>, index = <span class="number">0</span>, size = nums.size();</span><br><span class="line">    <span class="keyword">while</span> (largest_num &lt; n) &#123;</span><br><span class="line">        <span class="keyword">if</span> (index &lt; size &amp;&amp; nums[index] &lt;= largest_num + <span class="number">1</span>) &#123;</span><br><span class="line">            largest_num += nums[index];</span><br><span class="line">            ++ index;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            ++ patch_num;<span class="comment">// 给定largest_num, 则1, ..., largest_num都有覆盖，</span></span><br><span class="line">            <span class="comment">// 接下来想覆盖更多时，需要1. 加一个数，覆盖最远时，添加的数是1 + largest_num，</span></span><br><span class="line">            <span class="comment">// 则此时覆盖范围为1, ... , largest_num * 2 + 1;</span></span><br><span class="line">            <span class="comment">// 2. 如果恰好有一个数num在数组中，且范围在1~largest_num之间，那么，</span></span><br><span class="line">            <span class="comment">// 不需要添加数，采用此数即可。覆盖范围为1, ..., largest_num+num</span></span><br><span class="line">            largest_num = largest_num * <span class="number">2</span> + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> patch_num;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -332,9 +315,11 @@ p {
       
         <div class="post-tags">
           
-            <a href="/tags/电影/" rel="tag">#电影</a>
+            <a href="/tags/LeetCode/" rel="tag">#LeetCode</a>
           
-            <a href="/tags/垫底辣妹/" rel="tag">#垫底辣妹</a>
+            <a href="/tags/Patching-Array/" rel="tag">#Patching Array</a>
+          
+            <a href="/tags/贪心法/" rel="tag">#贪心法</a>
           
         </div>
       
@@ -343,17 +328,13 @@ p {
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/11/GoNote1/" rel="next" title="GO之旅1">
-                <i class="fa fa-chevron-left"></i> GO之旅1
+              <a href="/2016/04/17/MovieNote1/" rel="next" title="电影——垫底辣妹">
+                <i class="fa fa-chevron-left"></i> 电影——垫底辣妹
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/05/11/LeetCode1/" rel="prev" title="LeetCode1 -- Patching Array">
-                LeetCode1 -- Patching Array <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -379,8 +360,8 @@ p {
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/04/17/MovieNote1/"
-           data-title="电影——垫底辣妹" data-url="http://yoursite.com/2016/04/17/MovieNote1/">
+      <div class="ds-thread" data-thread-key="2016/05/11/LeetCode1/"
+           data-title="LeetCode1 -- Patching Array" data-url="http://yoursite.com/2016/05/11/LeetCode1/">
       </div>
     
   </div>

@@ -226,6 +226,126 @@
             
               
                 
+                <a class="post-title-link" href="/2016/05/11/LeetCode1/" itemprop="url">
+                  LeetCode1 -- Patching Array
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-11T13:19:32+08:00" content="2016-05-11">
+              2016-05-11
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/11/LeetCode1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/11/LeetCode1/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><style><br>p {<br>    text-indent:2em;<br>}<br></style><br>题目链接：<a href="https://leetcode.com/problems/patching-array/" target="_blank" rel="external">https://leetcode.com/problems/patching-array/</a></p>
+<p>采用方法为贪心法，原理如下，给定当前覆盖范围为i(即1, …, i), 接下来要加入一个数字，扩大当前的覆盖范围同时保持连续性时，添加的数字x的范围应该是[1, i + 1]。添加数字后的覆盖范围为i + x(即1, …, i + x).</p>
+<p>其中x的值最大为i + 1（再大的话，就不连续了，比如缺少i + 1），因此， 扩大的范围最大为(1, 2, …, i * i + 1).如果nums指定位置的数字在[1, i+1]范围内，则无需添加数字，最远范围为i + x; 否则，需要添加新的数字，添加的数字越大越好，为i+1。如此访问nums中的数字，直到i的值大于等于n。</p>
+<font style="color:darkRed;">【注意】largest_num的值必须是unsigned int或者long long，因为largest_num可能超出范围。</font>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">int</span> <span class="title">minPatches</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> largest_num = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> patch_num = <span class="number">0</span>, index = <span class="number">0</span>, size = nums.size();</span><br><span class="line">    <span class="keyword">while</span> (largest_num &lt; n) &#123;</span><br><span class="line">        <span class="keyword">if</span> (index &lt; size &amp;&amp; nums[index] &lt;= largest_num + <span class="number">1</span>) &#123;</span><br><span class="line">            largest_num += nums[index];</span><br><span class="line">            ++ index;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            ++ patch_num;<span class="comment">// 给定largest_num, 则1, ..., largest_num都有覆盖，</span></span><br><span class="line">            <span class="comment">// 接下来想覆盖更多时，需要1. 加一个数，覆盖最远时，添加的数是1 + largest_num，</span></span><br><span class="line">            <span class="comment">// 则此时覆盖范围为1, ... , largest_num * 2 + 1;</span></span><br><span class="line">            <span class="comment">// 2. 如果恰好有一个数num在数组中，且范围在1~largest_num之间，那么，</span></span><br><span class="line">            <span class="comment">// 不需要添加数，采用此数即可。覆盖范围为1, ..., largest_num+num</span></span><br><span class="line">            largest_num = largest_num * <span class="number">2</span> + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> patch_num;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/04/17/MovieNote1/" itemprop="url">
                   电影——垫底辣妹
                 </a>
@@ -860,7 +980,7 @@ p.content {
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -868,7 +988,7 @@ p.content {
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -877,7 +997,7 @@ p.content {
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
