@@ -226,6 +226,164 @@
             
               
                 
+                <a class="post-title-link" href="/2016/05/26/Matrix-Fill/" itemprop="url">
+                  巧妙的算法解题--Matrix Fill
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-26T17:16:24+08:00" content="2016-05-26">
+              2016-05-26
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/26/Matrix-Fill/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/26/Matrix-Fill/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <style>
+p {
+    text-indent:2em;
+}
+</style>
+
+<h3 id="算法描述"><a href="#算法描述" class="headerlink" title="算法描述"></a>算法描述</h3><blockquote>
+<p>Given a matrix of size n x m filled with 0’s and 1’s</p>
+<p>e.g.:</p>
+<p>1 1 0 1 0</p>
+<p>0 0 0 0 0</p>
+<p>0 1 0 0 0</p>
+<p>1 0 1 1 0</p>
+<p>if the matrix has 1 at (i,j), fill the column j and row i with 1’s</p>
+<p>i.e., we get:</p>
+<p>1 1 1 1 1</p>
+<p>1 1 1 1 0</p>
+<p>1 1 1 1 1</p>
+<p>1 1 1 1 1</p>
+<p>Required complexity: O(n*m) time and O(1) space</p>
+<p>NOTE: you are not allowed to store anything except ‘0’ or ‘1’ in the matrix entries</p>
+</blockquote>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><h4 id="解法一"><a href="#解法一" class="headerlink" title="解法一"></a>解法一</h4><p>最基础的解法，用额外的空间，采用辅助数组来记录相关信息：</p>
+<ul>
+<li>创建size为m的数组，记录包含’1’的行；</li>
+<li>创建size为n的数组，记录包含’1’的列；</li>
+<li>对于位置(i, j)处的字符，如果第i行或者第j列包含’1’，那么将此处entry置为’1’;</li>
+</ul>
+<p>算法的时间复杂度为O(mn)，但空间复杂度为O(m) + O(n);</p>
+<h4 id="解法二"><a href="#解法二" class="headerlink" title="解法二"></a>解法二</h4><p>在解法一的基础上，可以将空间复杂度降低至min(O(m), O(n)), 如下：</p>
+<ul>
+<li>创建size为n的数组，记录包含’1’的列；</li>
+<li>将包含字符’1’的行置为’1’；</li>
+<li>将包含字符’1’的列置为’1’;</li>
+</ul>
+<h4 id="最优解"><a href="#最优解" class="headerlink" title="最优解"></a>最优解</h4><p>对matrix进行观察，可以发现：</p>
+<ul>
+<li>如果matrix的每一行(或者每一列)都包含’1’, 那么最终结果是所有位置都是’1’;</li>
+<li>否则，如果有一行全是’0’， 那么在解法二中的第二步， 这一行是不会被改变的;</li>
+<li><b>这一行中只有所在列包含’1’的entries才会被置为’1’</b>, 这一思路指引我们将全’0’行作为解法一与二中的辅助数组；</li>
+<li>用这一行来记录包含’1’的列；</li>
+<li>随后，用辅助行来填充包含’1’的列， 完成填充。</li>
+</ul>
+<p>代码如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">matrixFill</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">char</span>&gt; &gt;&amp; matrix)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">bool</span> isAllOne = <span class="literal">true</span>, hasOne = <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">int</span> row = <span class="number">0</span>, rows = matrix.size(), i = <span class="number">0</span>, j = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (rows &lt;= <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> ;</span><br><span class="line">    <span class="keyword">int</span> cols = matrix[<span class="number">0</span>].size();</span><br><span class="line">    <span class="keyword">if</span> (cols &lt;= <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> ;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>;i &lt; rows &amp;&amp; isAllOne; ++ i) &#123;</span><br><span class="line">        <span class="keyword">for</span>(hasOne = <span class="literal">false</span>, j = <span class="number">0</span>;j &lt; cols &amp;&amp; !hasOne; ++ j) &#123;</span><br><span class="line">            <span class="keyword">if</span> (matrix[i][j] == <span class="string">'1'</span>)</span><br><span class="line">                hasOne = <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (!hasOne) &#123;</span><br><span class="line">            isAllOne = <span class="literal">false</span>;</span><br><span class="line">            row = i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="comment">// 检查是否存在全0的行；</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (isAllOne) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; rows; ++ i)</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>;j &lt; cols; ++ j)</span><br><span class="line">                matrix[i][j] = <span class="string">'1'</span>;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125; <span class="comment">// 如果不存在全0行，则matrix可以全部填充为1；</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>;i &lt; cols; ++ i) &#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (hasOne = <span class="literal">false</span>, j = <span class="number">0</span>;j &lt; rows &amp;&amp; !hasOne; ++ j) &#123;</span><br><span class="line">            <span class="keyword">if</span> (matrix[j][i] == <span class="string">'1'</span>)</span><br><span class="line">                hasOne = <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (hasOne)</span><br><span class="line">            matrix[row][i] = <span class="string">'1'</span>;</span><br><span class="line">    &#125; <span class="comment">// 检查matrix中哪些列存在1，并记录到全'0'行中；</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>;i &lt; rows; ++ i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (i == row)</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        <span class="keyword">for</span> (hasOne = <span class="literal">false</span>, j = <span class="number">0</span>;j &lt; cols &amp;&amp; !hasOne; ++ j) &#123;</span><br><span class="line">            <span class="keyword">if</span> (matrix[i][j] == <span class="string">'1'</span>)</span><br><span class="line">                hasOne = <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (hasOne) &#123; <span class="comment">// 该行存在1，则置为1；</span></span><br><span class="line">            <span class="keyword">for</span> (j = <span class="number">0</span>;j &lt; cols; ++ j)</span><br><span class="line">                matrix[i][j] = <span class="string">'1'</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">for</span> (j = <span class="number">0</span>;j &lt; cols; ++ j)</span><br><span class="line">                matrix[i][j] = matrix[row][j];</span><br><span class="line">        &#125; <span class="comment">// 该行如果全是0， 那么对应结果应该与作为辅助数组的全0行一致。</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/05/15/reading1/" itemprop="url">
                   作恶的缘由
                 </a>
@@ -1110,7 +1268,7 @@ p.content {
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-count">7</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1127,7 +1285,7 @@ p.content {
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
